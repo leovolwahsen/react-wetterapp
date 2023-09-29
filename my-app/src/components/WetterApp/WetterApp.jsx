@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./WetterApp.css";
 
 import luftfeuchtigkeit_icon from "../Assets/luftfeuchtigkeit.png";
-import korregieren_icon from "../Assets/korregieren.png";
+import sonne_icon from "../Assets/sonne.png";
 import leichterRegen_icon from "../Assets/leichterRegen.png";
 import regen_icon from "../Assets/regen.png";
 import schnee_icon from "../Assets/schnee.png";
@@ -29,6 +29,7 @@ export const WetterApp = () => {
 
     const response = await fetch(`${API_URL}?q=${ort}&units=Metric&appid=${API_KEY}`);
     const jsonWeatherData = await response.json();
+    console.log(jsonWeatherData)
 
     setLuftfeuchtigkeitsprozent(jsonWeatherData.main.humidity);
     setWindgeschwindigkeit(jsonWeatherData.wind.speed);
